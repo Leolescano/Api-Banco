@@ -16,10 +16,19 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class Categoria {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String descricao;
+public class Transacao {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private String descricao;
+	
+	private Double valor;
+	
+	private String data;
+	
+	private Long categoriaId;
+	
+	private Long usuarioId;
+	
 }
