@@ -1,5 +1,6 @@
 package com.leonardo.apibanco;
 
+import com.leonardo.apibanco.model.domain.Usuario;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
