@@ -1,20 +1,9 @@
-![](https://i.imgur.com/xG74tOh.png)
-
 # Desafio Módulo 3 - Backend
 
-## Como entregar?
-
-- [ ] Faça o fork desse repositório para o seu GitHub
-- [ ] Clone o seu repositório em sua máquina
-- [ ] Desenvolva seu projeto, fazendo commits a cada alteração e push
-- [ ] Crie um PR (pull request)
-- [ ] Envie o link do pull request que você criou na plataforma da Cubos
-
-### ⚠️ Importante: Se o pull request não for criado e enviado na plataforma o feedback não será fornecido e constará como não entregue
 
 ## Descrição do desafio
 
-Seu papel é construir uma RESTful API que permita:
+Seu papel é construir uma RESTfull API que permita:
 
 - Cadastrar Usuário
 - Fazer Login
@@ -31,15 +20,11 @@ Seu papel é construir uma RESTful API que permita:
 
 **Importante: Lembre-se sempre que cada usuário só pode ver e manipular seus próprios dados e suas próprias transações. Não atender a este pré-requisito é uma falha de segurança gravíssima!**
 
-**Importante 2: O diretório ".github" e seu conteúdo não podem ser alterados e muito menos excluídos**
-
-**Importante 3: Sempre que a validação de uma requisição falhar, responda com código de erro e mensagem adequada à situação, ok?**
-
-**Importante 4: O link de acesso a esta API se encontra no final deste README. Este link é somente para testes!**
+**Importante 2: Sempre que a validação de uma requisição falhar, responda com código de erro e mensagem adequada à situação, ok?**
 
 **Exemplo:**
 
-```javascript
+```JSON
 // Quando é informado um id de transação que não existe:
 // HTTP Status 404
 {
@@ -69,8 +54,6 @@ Você precisa criar um Banco de Dados PostgreSQL chamado `dindin` contendo as se
   - usuario_id
   - tipo
 
-**IMPORTANTE: Deverá ser criado no projeto o(s) arquivo(s) SQL que deverá ser o script que cria as tabelas corretamente.**
-
 As categorias a seguir precisam ser previamente cadastradas para que sejam listadas no endpoint de listagem das categorias.
 
 ## **Categorias**
@@ -93,25 +76,17 @@ As categorias a seguir precisam ser previamente cadastradas para que sejam lista
 - Outras receitas
 - Outras despesas
 
-**IMPORTANTE: Deverá ser criado no projeto o arquivo SQL que deverá ser o script de inserção das categorias acima na tabela.**
-
 ## **Requisitos obrigatórios**
 
 - A API a ser criada deverá acessar o banco de dados a ser criado "dindin" para persistir e manipular os dados de usuários, categorias e transações utilizados pela aplicação.
 - O campo `id` das tabelas no banco de dados deve ser auto incremento, chave primária e não deve permitir edição uma vez criado.
-- Seu código deverá estar organizado, delimitando as responsabilidades de cada arquivo adequadamente. Ou seja, é esperado que ele tenha, no mínimo:
-  - Um arquivo index.js
-  - Um arquivo conexao.js
-  - Um arquivo de rotas
-  - Um pasta com controladores
 - Qualquer valor monetário deverá ser representado em centavos (Ex.: R$ 10,00 reais = 1000)
-- Evite códigos duplicados. Antes de copiar e colar, pense se não faz sentido esse pedaço de código estar centralizado numa função.
 
 ## **Status Codes**
 
 Abaixo, listamos os possíveis **_status codes_** esperados como resposta da API.
 
-```javascript
+```java
 // 200 (OK) = requisição bem sucedida
 // 201 (Created) = requisição bem sucedida e algo foi criado
 // 204 (No Content) = requisição bem sucedida, sem conteúdo no corpo da resposta
@@ -152,7 +127,7 @@ Essa é a rota que será utilizada para cadastrar um novo usuario no sistema.
 
 #### **Exemplo de requisição**
 
-```javascript
+```JSON
 // POST /usuario
 {
     "nome": "José",
@@ -163,7 +138,7 @@ Essa é a rota que será utilizada para cadastrar um novo usuario no sistema.
 
 #### **Exemplos de resposta**
 
-```javascript
+```JSON
 // HTTP Status 200 / 201 / 204
 {
     "id": 1,
@@ -172,7 +147,7 @@ Essa é a rota que será utilizada para cadastrar um novo usuario no sistema.
 }
 ```
 
-```javascript
+```JSON
 // HTTP Status 400 / 401 / 403 / 404
 {
     "mensagem": "Já existe usuário cadastrado com o e-mail informado."
@@ -207,7 +182,7 @@ Essa é a rota que permite o usuario cadastrado realizar o login no sistema.
 
 #### **Exemplo de requisição**
 
-```javascript
+```JSON
 // POST /login
 {
     "email": "jose@email.com",
@@ -217,7 +192,7 @@ Essa é a rota que permite o usuario cadastrado realizar o login no sistema.
 
 #### **Exemplos de resposta**
 
-```javascript
+```JSON
 // HTTP Status 200 / 201 / 204
 {
     "usuario": {
@@ -229,7 +204,7 @@ Essa é a rota que permite o usuario cadastrado realizar o login no sistema.
 }
 ```
 
-```javascript
+```JSON
 // HTTP Status 400 / 401 / 403 / 404
 {
     "mensagem": "Usuário e/ou senha inválido(s)."
@@ -267,14 +242,14 @@ Essa é a rota que será chamada quando o usuario quiser obter os dados do seu p
 
 #### **Exemplo de requisição**
 
-```javascript
+```JSON
 // GET /usuario
 // Sem conteúdo no corpo (body) da requisição
 ```
 
 #### **Exemplos de resposta**
 
-```javascript
+```JSON
 // HTTP Status 200 / 201 / 204
 {
     "id": 1,
@@ -475,7 +450,7 @@ Essa é a rota que será chamada quando o usuario logado quiser obter uma das su
 
 #### **Exemplos de resposta**
 
-```javascript
+```JSON
 // HTTP Status 200 / 201 / 204
 {
     "id": 3,
