@@ -27,7 +27,6 @@ public class Usuario {
     private String senha;
 
     @OneToMany(mappedBy = "usuario",
-            cascade =CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     @JsonManagedReference
