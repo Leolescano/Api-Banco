@@ -1,12 +1,13 @@
 package com.leonardo.apibanco.config;
 
-import com.leonardo.apibanco.model.domain.Categoria;
-import com.leonardo.apibanco.repository.CategoriaRepository;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
+import com.leonardo.apibanco.model.domain.Categoria;
+import com.leonardo.apibanco.repository.CategoriaRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

@@ -24,10 +24,6 @@ public class Categoria {
     private Long id;
 
     private String descricao;
+    
 
-    @OneToMany(mappedBy = "categoria",
-            fetch = FetchType.LAZY
-    )
-    @JsonManagedReference
-    private List<Transacao> transacoes = new ArrayList<>();
 }
